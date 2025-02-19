@@ -5,6 +5,9 @@
 
 This project is an interactive dashboard for robot systems that allows to monitor current state of robots and smart devices 
 
+![Ivan_Kostin_Poster_21078541](https://github.com/user-attachments/assets/08b42140-b33e-4347-960a-df5e31491efa)
+
+
 ### Appearance
 [Figma design file](https://www.figma.com/design/jdrHEUwNXowV4hHIZrkSP5/Shrim-Twin?node-id=0-1&t=hKQjofC8kiQhJF6H-1)
 <details>
