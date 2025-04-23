@@ -48,7 +48,7 @@ docker compose up
 
 ## ✨ Appearance
 
-[🔗 Figma design document](https://www.figma.com/design/jdrHEUwNXowV4hHIZrkSP5/Shrim-Twin?node-id=0-1&t=hKQjofC8kiQhJF6H-1)
+[🔗 Figma design document](https://www.figma.com/design/H98524EWcIvWC4ppLjB5gs/Shrim-Twin?node-id=2099-10447&t=tAHWBKZVC5qf7UOD-1)
 <details>
   <summary>DESIGN MOCKUP</summary>
 
