@@ -1,0 +1,98 @@
+services:
+  frontend:
+    image: limarkdl/shrim-twin-front:latest
+    build:
+      context: ./apps/frontend
+      dockerfile: Dockerfile.prod
+    ports:
+      - "3000:3000"
+    labels:
+      - "shrimtwin.monitoring.include=true"
+      - "shrimtwin.app.name=frontend"
+    depends_on:
+      - backend
+    environment:
+      NODE_ENV: production
+    networks:
+      - app-network
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 256M
+
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:v0.52.1
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    ports:
+      - "8082:8080"
+    labels:
+      - "shrimtwin.monitoring.include=true"
+      - "shrimtwin.app.name=cadvisor"
+    networks:
+      - app-network
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: '0.3'
+          memory: 256M
+        reservations:
+          cpus: '0.1'
+          memory: 128M
+
+  backend:
+    image: limarkdl/shrim-twin-server:latest
+    build:
+      context: ./apps/backend
+      dockerfile: Dockerfile.prod
+    ports:
+      - "38934:38934"
+      - "8080:8080"
+    labels:
+      - "shrimtwin.monitoring.include=true"
+      - "shrimtwin.app.name=backend"
+    environment:
+      NODE_ENV: production
+    networks:
+      - app-network
+    deploy:
+      resources:
+        limits:
+          cpus: '0.7'
+          memory: 1G
+        reservations:
+          cpus: '0.3'
+          memory: 512M
+
+  ros-bridge:
+    image: limarkdl/shrim-twin-ros-bridge:latest
+    build:
+      context: ./apps/ros-bridge
+      dockerfile: Dockerfile
+    privileged: true
+    network_mode: "host"
+    volumes:
+      - "/dev/shm:/dev/shm"
+    labels:
+      - "shrimtwin.monitoring.include=true"
+      - "shrimtwin.app.name=ros-bridge"
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 2G
+        reservations:
+          cpus: '0.5'
+          memory: 1G
+
+networks:
+  app-network:
+    driver: bridge

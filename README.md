@@ -7,7 +7,6 @@ This project is an interactive dashboard for robot systems that allows to monito
 
 ![Ivan_Kostin_Poster_21078541](https://github.com/user-attachments/assets/08b42140-b33e-4347-960a-df5e31491efa)
 
-
 ### Appearance
 [Figma design file](https://www.figma.com/design/jdrHEUwNXowV4hHIZrkSP5/Shrim-Twin?node-id=0-1&t=hKQjofC8kiQhJF6H-1)
 <details>
@@ -17,47 +16,26 @@ This project is an interactive dashboard for robot systems that allows to monito
 
 </details>
 
-### Pulling Docker image 
-1. Pull the `limarkdl/shrim-twin` image:
-```bash
-docker pull limarkdl/shrim-twin
-```  
-2. Run the pulled image:
-```bash
-docker run -p 3000:3000 limarkdl/shrim-twin
-```
-3. Open `http://localhost:3000` in your browser
-   
-### Running DEV 
-
-1. Install all required dependencies:
-
-```bash
-npm run i
-```
-
-2. For development version run:
-
-```bash
-npm run dev
-```
-
 ### Running PRODUCTION
+#### Requirements:
+1. Linux (Windows or macOS are not supported)
+2. Installed Docker (>= 20.10)
 
-1. Build the image 
-```bash 
-docker build -t <your_desired_name> .
-```
-2. Run the image
+#### Steps:
+
+1. Clone this repository 
 ```bash
-docker run -p 3000:3000 <your_desired_name>
+git clone https://github.com/limarkdl/shrim-twin.git
+```
+2. Open created repository folder
+```bash
+cd shrim-twin
+```
+3. Run the following command
+```bash
+docker compose up
 ```
 4. Now this application is available at `http://localhost:3000`
-
-### Required GitHub secrets
-- `DOCKERHUB_USERNAME` - username of your DockerHub account
-- `DOCKERHUB_TOKEN` - access token for your DockerHub
-- `MY_GITHUB_TOKEN` - access token for your GitHub
 
 
 #### By Ivan Kostin, [@limarkdl](https://github.com/limarkdl)
