@@ -11,7 +11,7 @@
 This project is an interactive dashboard for robot systems that allows to monitor current state of robots and smart
 devices
 
-![Ivan_Kostin_Poster_21078541](https://github.com/user-attachments/assets/08b42140-b33e-4347-960a-df5e31491efa)
+![Ivan_Kostin_Poster_21078541](https://github.com/user-attachments/assets/8081e807-3019-41c3-ba4c-1c4417d1b617)
 
 ---
 
