@@ -46,6 +46,13 @@ docker compose up
 
 ---
 
+### 🐳 Docker Images
+
+1. `limarkdl/shrim-twin-front`
+2. `limarkdl/shrim-twin-server`
+3. `limarkdl/shrim-twin-ros-bridge`
+4. `gcr.io/cadvisor/cadvisor:v0.52.1`
+
 ## ✨ Appearance
 
 [🔗 Figma design document](https://www.figma.com/design/H98524EWcIvWC4ppLjB5gs/Shrim-Twin?node-id=2099-10447&t=tAHWBKZVC5qf7UOD-1)
